@@ -78,7 +78,7 @@ input {
 .balance .label {
   color: var(--color-1);
 }
-.result {
+.result, input {
   font-family: var(--font-family);
   font-weight: 600;
   font-size: 36px;
