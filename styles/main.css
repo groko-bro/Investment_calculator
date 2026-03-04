@@ -2,6 +2,8 @@
   --color-1: #083e9e;
   --font-family: "Josefin Sans", sans-serif;
   --second-family: "Segoe UI", sans-serif;
+  --back-image1: url(../img/img_1.png);
+  --back-image2: url(../img/img_2.png);
 }
 html {
   box-sizing: border-box;
@@ -20,48 +22,50 @@ body {
   color: var(--color-1);
   max-width: 474px;
   margin: 0;
-  margin-top: 122px;
-  letter-spacing: 1.2px;
+  margin-top: 125px;
+  letter-spacing: 0.025em;
 }
 .container {
-  /* text-align: center; */
   max-width: 1165px;
   min-height: 506px;
-  align-self: center;
   margin: 0 auto;
 }
 .calc_form {
   display: flex;
-  gap: 100px;
-  height: 400px;
-  margin: 0;
+  min-height: 400px;
+  margin: 3px 0 0 0;
+
+  justify-content: space-between;
 }
 .calc_image {
-  background-image: url(../img/img_1.png);
+  background-image: var(--back-image1);
   background-repeat: no-repeat;
-  background-position: bottom 50px;
-  justify-content: end;
-  width: 585px;
+  max-width: 585px;
+  width: 100%;
   height: 375px;
-  margin-top: 43px;
-  margin-left: 3px;
+  margin-left: 4px;
+  margin-top: 38px;
+  background-size: contain; 
 }
 .calc_inputs {
 font-family: var(--font-family);
 font-weight: 700;
 font-size: 24px;
 color: #4a5568;
-letter-spacing: 1px;
-}
-.summa {
-  margin-top: 6px;
+letter-spacing: 0.99px;
+width: 474px;
 }
 input {
-  width: 474px;
+  max-width: 474px;
+  width: 100%;
   height: 64px;
   border-width: 0;
   border-radius: 4px;
   background: rgba(0, 136, 204, 0.08);
+  font-family: var(--second-family);
+  font-weight: 400;
+  font-size: 24px;
+  color: rgba(59, 59, 59, 0.7);
 }
 .summa input {
   margin-top: 11px;
@@ -78,10 +82,60 @@ input {
 .balance .label {
   color: var(--color-1);
 }
-.result, input {
+.result {
   font-family: var(--font-family);
   font-weight: 600;
   font-size: 36px;
   color: #000;
   margin-top: 21px;
+}
+.description {
+  margin-top: 140px;
+  margin-bottom: 100px;
+}
+.description .title {
+  margin: 0 auto;
+  max-width: 546px;
+}
+.desc_container {
+  display: flex;
+  gap: 75px;
+}
+.decs_image {
+  background-image: var(--back-image2);
+  background-repeat: no-repeat;
+  max-width: 514px;
+  width: 100%;
+  height: 329px;
+  background-size: contain;   
+}
+.desc_text {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 114%;
+  color: #4a5568;
+  align-self: center;
+}
+@media screen and (max-width: 1250px) {
+  .calc_form, .desc_container {
+    flex-direction: column;
+    align-content: center;
+    gap: 0;
+  }
+  .container {
+    max-width: 500px;
+    padding: 0 20px;
+  }
+  .image {
+    margin-right: 20px;
+    height: 200px;
+  }  
+  .calc_inputs {
+    min-width: 174px;
+    padding-right: 20px;
+  }
+  .desc_text {
+    padding-right: 20px;
+  }
 }
